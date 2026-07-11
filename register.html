@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official course registration form for the IT Institute. Secure your enrollment by submitting your academic and personal preferences.">
+    <title>Course Registration Form - IT Institute</title>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>IT Institute</h1>
+        <h2>Student Course Registration Form</h2>
+        <nav>
+            <p>
+                <a href="index.html">Home</a> | 
+                <a href="courses/java.html">Java Syllabus</a> | 
+                <a href="courses/python.html">Python Syllabus</a> | 
+                <a href="courses/webdev.html">Web Dev Syllabus</a> | 
+                <a href="register.html"><strong>Student Registration</strong></a>
+            </p>
+        </nav>
+        <hr>
+    </header>
+
+    <!-- Main Registration Section -->
+    <main>
+        <section id="registration-instructions">
+            <h3>Instructions:</h3>
+            <ul>
+                <li>Please fill out all fields marked with an asterisk (<span style="color: red;">*</span>) carefully.</li>
+                <li>Make sure to select the correct course corresponding to the syllabi you reviewed.</li>
+                <li>Submit only one registration form per term.</li>
+            </ul>
+        </section>
+
+        <!-- Form Element -->
+        <form action="https://httpbin.org/post" method="POST" enctype="multipart/form-data">
+            
+            <!-- Fieldset 1: Personal Information -->
+            <fieldset>
+                <legend><strong>1. Personal &amp; Contact Details</strong></legend>
+                
+                <table border="0" cellpadding="5">
+                    <tr>
+                        <td><label for="first-name">First Name <span style="color: red;">*</span>:</label></td>
+                        <td><input type="text" id="first-name" name="firstName" placeholder="John" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="last-name">Last Name <span style="color: red;">*</span>:</label></td>
+                        <td><input type="text" id="last-name" name="lastName" placeholder="Doe" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="birth-date">Date of Birth <span style="color: red;">*</span>:</label></td>
+                        <td><input type="date" id="birth-date" name="birthDate" min="1950-01-01" max="2012-12-31" required></td>
+                    </tr>
+                    <tr>
+                        <td>Gender <span style="color: red;">*</span>:</td>
+                        <td>
+                            <input type="radio" id="gender-male" name="gender" value="male" required>
+                            <label for="gender-male">Male</label>
+                            <input type="radio" id="gender-female" name="gender" value="female">
+                            <label for="gender-female">Female</label>
+                            <input type="radio" id="gender-other" name="gender" value="other">
+                            <label for="gender-other">Other</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="email">Email Address <span style="color: red;">*</span>:</label></td>
+                        <td><input type="email" id="email" name="email" placeholder="johndoe@example.com" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="phone">Phone Number <span style="color: red;">*</span>:</label></td>
+                        <td><input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Format: 123-456-7890" required></td>
+                    </tr>
+                    <tr>
+                        <td><label for="address">Mailing Address:</label></td>
+                        <td><textarea id="address" name="address" rows="3" cols="30" placeholder="123 Main St, Apt 4B, New York, NY"></textarea></td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <br>
+
+            <!-- Fieldset 2: Academic & Course Selection Preferences -->
+            <fieldset>
+                <legend><strong>2. Course Preferences &amp; Prerequisites</strong></legend>
+                
+                <table border="0" cellpadding="5">
+                    <tr>
+                        <td><label for="course-select">Select Technical Track <span style="color: red;">*</span>:</label></td>
+                        <td>
+                            <select id="course-select" name="courseTrack" required>
+                                <option value="" disabled selected>-- Choose Course --</option>
+                                <option value="CS-102">CS-102: Java Programming &amp; Application Development (LKR 360,000)</option>
+                                <option value="CS-103">CS-103: Python Programming &amp; Data Foundations (LKR 300,000)</option>
+                                <option value="CS-104">CS-104: Full-Stack Web Development (LKR 450,000)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="start-term">Preferred Start Semester <span style="color: red;">*</span>:</label></td>
+                        <td>
+                            <select id="start-term" name="startTerm" required>
+                                <option value="fall-2026">Fall 2026 (September)</option>
+                                <option value="spring-2027">Spring 2027 (January)</option>
+                                <option value="summer-2027">Summer 2027 (May)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Preferred Time Slot <span style="color: red;">*</span>:</td>
+                        <td>
+                            <input type="radio" id="slot-morning" name="timeSlot" value="morning" required>
+                            <label for="slot-morning">Morning (09:00 AM - 12:00 PM)</label><br>
+                            <input type="radio" id="slot-afternoon" name="timeSlot" value="afternoon">
+                            <label for="slot-afternoon">Afternoon (01:00 PM - 04:00 PM)</label><br>
+                            <input type="radio" id="slot-evening" name="timeSlot" value="evening">
+                            <label for="slot-evening">Evening (06:00 PM - 09:00 PM)</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Core Prerequisites Acknowledged:</td>
+                        <td>
+                            <input type="checkbox" id="prereq-logic" name="prereqs" value="basic-logic">
+                            <label for="prereq-logic">I possess basic computer literacy and programming logic concepts.</label><br>
+                            <input type="checkbox" id="prereq-hardware" name="prereqs" value="hardware">
+                            <label for="prereq-hardware">I have access to a personal laptop with administrator rights for course setups.</label><br>
+                            <input type="checkbox" id="prereq-materials" name="prereqs" value="reading-syllabus">
+                            <label for="prereq-materials">I have read the syllabus outline details for my chosen course.</label>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <br>
+
+            <!-- Fieldset 3: Academic Background & Statement -->
+            <fieldset>
+                <legend><strong>3. Education &amp; Background</strong></legend>
+                
+                <table border="0" cellpadding="5">
+                    <tr>
+                        <td><label for="highest-edu">Highest Level of Education:</label></td>
+                        <td>
+                            <select id="highest-edu" name="educationLevel">
+                                <option value="highschool">High School Diploma</option>
+                                <option value="associate">Associate Degree</option>
+                                <option value="bachelor">Bachelor's Degree</option>
+                                <option value="master">Master's Degree</option>
+                                <option value="other">Other / Self-Taught</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="resume-upload">Upload Academic Transcript / Resume:</label></td>
+                        <td><input type="file" id="resume-upload" name="transcriptResume" accept=".pdf,.doc,.docx"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="statement-purpose">Statement of Purpose / Goals:</label></td>
+                        <td>
+                            <textarea id="statement-purpose" name="goals" rows="5" cols="45" placeholder="Briefly describe your programming background and career goals..."></textarea>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            <br>
+
+            <!-- Fieldset 4: Declarations & Submit -->
+            <fieldset>
+                <legend><strong>4. Agreement &amp; Submission</strong></legend>
+                <p>
+                    <input type="checkbox" id="terms-agree" name="termsAgreement" value="agreed" required>
+                    <label for="terms-agree">I certify that all information provided is accurate, and I agree to abide by the IT Institute Code of Conduct. <span style="color: red;">*</span></label>
+                </p>
+                
+                <p>
+                    <input type="submit" value="Submit Registration Details">
+                    &nbsp;&nbsp;&nbsp;
+                    <input type="reset" value="Reset Form Fields">
+                </p>
+            </fieldset>
+
+        </form>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <hr>
+        <p>Back to the <a href="index.html">Homepage</a>.</p>
+        <p>&copy; 2026 IT Institute. All rights reserved. Built using pure semantic HTML.</p>
+    </footer>
+
+</body>
+</html>
