@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with the IT Institute Horana Campus. Find our phone number, email, and inquiry form here.">
+    <title>Contact Us - IT Institute</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+
+        <!-- Header Section -->
+        <header>
+            <div class="header-brand">
+                <h1>IT Institute</h1>
+                <h2>Contact Us</h2>
+            </div>
+            <nav>
+                <p>
+                    <a href="index.html">Home</a> 
+                    <a href="courses.html">Courses</a> 
+                    <a href="register.html">Register</a> 
+                    <a href="contact.html" class="active">Contact Us</a>
+                </p>
+            </nav>
+        </header>
+
+        <!-- Main Content Section -->
+        <main>
+            <!-- Campus Contact Details -->
+            <section style="text-align: center;">
+                <h2>Horana Campus</h2>
+                <p>Have questions about courses, certifications, or class schedules? Reach out to our admissions advisors directly.</p>
+                
+                <div class="stats-grid" style="margin-bottom: 2rem;">
+                    <div class="stats-card">
+                        <h4>Address</h4>
+                        <p>Horana, Sri Lanka</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Phone</h4>
+                        <p>+94 34 226 1234</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>Email</h4>
+                        <p>info@itinstitute.lk</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Inquiry Form -->
+            <section>
+                <h2>Send an Inquiry</h2>
+                <p>Fill out the form below and an admissions counselor will reach back via email or phone call.</p>
+                
+                <form action="https://httpbin.org/post" method="POST">
+                    <fieldset>
+                        <legend>Inquiry Details</legend>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="inquiry-name">Your Name <span class="required-star">*</span></label>
+                                <input type="text" id="inquiry-name" name="inquiryName" placeholder="John Doe" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="inquiry-email">Email Address <span class="required-star">*</span></label>
+                                <input type="email" id="inquiry-email" name="inquiryEmail" placeholder="johndoe@example.com" required>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="inquiry-subject">Subject <span class="required-star">*</span></label>
+                                <input type="text" id="inquiry-subject" name="inquirySubject" placeholder="Course Query" required>
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="inquiry-message">Message <span class="required-star">*</span></label>
+                                <textarea id="inquiry-message" name="inquiryMessage" rows="5" placeholder="I would like to get more information about the CS-102 Java Course syllabus..." required></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-actions">
+                        <button type="submit">Submit Inquiry</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+
+        <!-- Footer Section Centered -->
+        <footer>
+            <p>&copy; 2026 IT Institute Horana. All rights reserved.</p>
+            <p>Built with ❤️ for Technical Excellence</p>
+        </footer>
+
+    </div>
+</body>
+</html>

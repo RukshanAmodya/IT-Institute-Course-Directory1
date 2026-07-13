@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Academic Portal for the IT Institute Course Directory. Explore technical syllabi in Java, Python, and Web Development, and register online.">
-    <title>IT Institute - Course Directory & Academic Portal</title>
+    <meta name="description" content="Official Academic Portal of the IT Institute. Explore courses, register online, and connect with our Horana campus.">
+    <title>IT Institute - Academic Portal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,105 +12,117 @@
 
         <!-- Header Section -->
         <header>
-            <h1>IT Institute</h1>
-            <p><strong>Empowering Future Developers through Rigorous Technical Education</strong></p>
+            <div class="header-brand">
+                <h1>IT Institute</h1>
+                <h2>Horana Campus</h2>
+            </div>
             <nav>
                 <p>
                     <a href="index.html" class="active">Home</a> 
-                    <a href="courses/java.html">Java Syllabus</a> 
-                    <a href="courses/python.html">Python Syllabus</a> 
-                    <a href="courses/webdev.html">Web Dev Syllabus</a> 
-                    <a href="register.html">Student Registration</a>
+                    <a href="courses.html">Courses</a> 
+                    <a href="register.html">Register</a> 
+                    <a href="contact.html">Contact Us</a>
                 </p>
             </nav>
         </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <!-- Welcome Section -->
-        <section id="welcome">
-            <h2>Welcome to the Academic Portal</h2>
-            <p>
-                The IT Institute offers intensive, career-oriented courses designed to bridge the gap between academic theory and industry demands. 
-                Our curriculum is meticulously structured to provide deep practical experience and solid theoretical foundations.
-            </p>
-        </section>
+        <!-- Main Content Section -->
+        <main>
+            <!-- Super Premium Hero Section -->
+            <section class="hero-section">
+                <span class="hero-tag">Enrollment Now Open</span>
+                <h2 class="hero-title">Shape the Future of Technology</h2>
+                <p class="hero-subtitle">
+                    The IT Institute is Sri Lanka's premium tech education academy. We deliver rigorous, production-grade training in Java, Python, and Full-Stack Web Development, bridging the gap between theory and industry demand.
+                </p>
+                <div class="hero-actions">
+                    <a href="courses.html" class="btn btn-primary">Browse Courses</a>
+                    <a href="register.html" class="btn btn-secondary">Apply Online</a>
+                </div>
+            </section>
 
-        <!-- Course Summary Matrix -->
-        <section id="course-matrix">
-            <h2>Our Core Curriculum Matrix</h2>
-            <p>Below is a summary of the technical programs offered this semester. Click on the course name to view its comprehensive syllabus.</p>
+            <!-- Highlights Section -->
+            <section>
+                <h2>Why Choose IT Institute?</h2>
+                <p>Our training programs are designed to give students practical skillsets with a industry-aligned curriculum.</p>
+                
+                <div class="stats-grid">
+                    <div class="stats-card">
+                        <h4>94%</h4>
+                        <p>Graduate Placement</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>3+</h4>
+                        <p>Specialized Tracks</p>
+                    </div>
+                    <div class="stats-card">
+                        <h4>100%</h4>
+                        <p>Practical Labs</p>
+                    </div>
+                </div>
+            </section>
 
-            <table border="1" cellpadding="10" cellspacing="0">
-                <caption><strong>Academic Programs Overview (Fall 2026)</strong></caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Course Code</th>
-                        <th scope="col">Program / Course Name</th>
-                        <th scope="col">Level</th>
-                        <th scope="col">Duration</th>
-                        <th scope="col">Tuition Fee</th>
-                        <th scope="col">Prerequisites</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>CS-102</strong></td>
-                        <td><a href="courses/java.html">Java Programming & Application Development</a></td>
-                        <td>Intermediate</td>
-                        <td>12 Weeks</td>
-                        <td>LKR 360,000</td>
-                        <td>Basic programming logic or CS-101</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CS-103</strong></td>
-                        <td><a href="courses/python.html">Python Programming & Data Foundations</a></td>
-                        <td>Beginner to Intermediate</td>
-                        <td>10 Weeks</td>
-                        <td>LKR 300,000</td>
-                        <td>None (Open to all backgrounds)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>CS-104</strong></td>
-                        <td><a href="courses/webdev.html">Full-Stack Web Development</a></td>
-                        <td>Advanced</td>
-                        <td>16 Weeks</td>
-                        <td>LKR 450,000</td>
-                        <td>HTML, CSS, and basic programming</td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <th scope="row" colspan="4">Total Unique Offerings</th>
-                        <td colspan="2"><strong>3 Specialized Programs</strong></td>
-                    </tr>
-                </tfoot>
-            </table>
-        </section>
+            <!-- Featured Programs Section -->
+            <section>
+                <h2>Featured Technical Programs</h2>
+                <p>Explore our highly demanding technical specializations. Click to review curricula and apply.</p>
+                
+                <div class="course-showcase-grid">
+                    <div class="course-item-card">
+                        <span class="course-item-code">CS-102</span>
+                        <h4>Java Programming</h4>
+                        <p>Master Object-Oriented paradigms, database connectivity, and collections frameworks.</p>
+                        <div class="course-item-details">
+                            <span>12 Weeks</span>
+                            <span>LKR 360,000</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">View Syllabus</a>
+                    </div>
 
-        <br>
-        <hr>
+                    <div class="course-item-card">
+                        <span class="course-item-code">CS-103</span>
+                        <h4>Python Programming</h4>
+                        <p>Learn script automation, core collections, and scientific data libraries like Pandas.</p>
+                        <div class="course-item-details">
+                            <span>10 Weeks</span>
+                            <span>LKR 300,000</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">View Syllabus</a>
+                    </div>
 
-        <!-- General Registration info -->
-        <section id="admissions">
-            <h2>Admissions & Enrollment</h2>
-            <p>
-                We accept applications on a rolling basis. To secure your seat in the upcoming batch, please follow these steps:
-            </p>
-            <ol>
-                <li>Review the individual course syllabi linked above to select your preferred track.</li>
-                <li>Ensure you meet the specified prerequisites for the desired program.</li>
-                <li>Navigate to our <strong><a href="register.html">Student Registration Form</a></strong>.</li>
-                <li>Complete all required fields and submit your registration.</li>
-                <li>An admissions advisor will contact you within 2 business days to schedule an interview.</li>
-            </ol>
-        </section>
-    </main>
+                    <div class="course-item-card">
+                        <span class="course-item-code">CS-104</span>
+                        <h4>Full-Stack Web Dev</h4>
+                        <p>Build semantic frontends and RESTful JSON APIs using modern node/database servers.</p>
+                        <div class="course-item-details">
+                            <span>16 Weeks</span>
+                            <span>LKR 450,000</span>
+                        </div>
+                        <a href="courses.html" class="btn btn-secondary">View Syllabus</a>
+                    </div>
+                </div>
+            </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2026 IT Institute. All rights reserved.</p>
-    </footer>
+            <!-- Campus Information Section -->
+            <section>
+                <h2>Campus &amp; Location</h2>
+                <p>Visit our central modern training facilities to experience our learning spaces first-hand.</p>
+                <ul class="centered-list">
+                    <li><strong>Campus Location:</strong> Horana, Sri Lanka</li>
+                    <li><strong>Open Hours:</strong> Monday – Saturday: 8:30 AM – 5:30 PM</li>
+                    <li><strong>Email Address:</strong> admissions@itinstitute.lk</li>
+                </ul>
+                <div style="margin-top: 1.5rem; text-align: center;">
+                    <a href="contact.html" class="btn btn-secondary">Contact &amp; Directions</a>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer Section Centered -->
+        <footer>
+            <p>&copy; 2026 IT Institute Horana. All rights reserved.</p>
+            <p>Built with ❤️ for Technical Excellence</p>
+        </footer>
 
     </div>
 </body>
