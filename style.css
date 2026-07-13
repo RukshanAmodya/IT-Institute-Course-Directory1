@@ -1,0 +1,532 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --bg-main: #0B0F19;
+    --bg-card: rgba(20, 27, 45, 0.7);
+    --bg-input: #151C2C;
+    --border-color: rgba(255, 255, 255, 0.08);
+    --border-focus: #6366F1;
+    --text-primary: #F3F4F6;
+    --text-muted: #9CA3AF;
+    --accent-glow: linear-gradient(135deg, #6366F1 0%, #A855F7 50%, #EC4899 100%);
+    --accent-teal: #14B8A6;
+    --accent-purple: #A855F7;
+    --accent-indigo: #6366F1;
+    --accent-indigo-light: #818CF8;
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 1px 1px 0 rgba(255, 255, 255, 0.05) inset;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* Global Reset & Base Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Decorative background glowing shapes */
+body::before, body::after {
+    content: '';
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.15;
+    z-index: -1;
+    pointer-events: none;
+}
+body::before {
+    top: 5%;
+    left: 10%;
+    background: var(--accent-indigo);
+}
+body::after {
+    bottom: 10%;
+    right: 10%;
+    background: var(--accent-purple);
+}
+
+/* Layout Containers & Wrapper */
+.app-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header & Navigation Styles */
+header {
+    padding: 2.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 3rem;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    background: var(--accent-glow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+header h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+}
+
+header nav {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+}
+
+header nav p {
+    margin: 0;
+}
+
+header nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    display: inline-block;
+}
+
+header nav a:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+header nav a strong, header nav a.active {
+    color: var(--accent-indigo-light);
+    background: rgba(99, 102, 241, 0.1);
+    box-shadow: 0 0 15px rgba(99, 102, 241, 0.1) inset;
+}
+
+header hr {
+    display: none; /* Hide traditional HRs in favor of modern CSS borders */
+}
+
+/* Main Content Area */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-premium);
+    backdrop-filter: blur(16px);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+section:hover {
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+section h2, section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.85rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+section h2::before, section h3::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 1.5rem;
+    background: var(--accent-glow);
+    border-radius: 4px;
+}
+
+section p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    font-weight: 300;
+}
+
+/* Table Custom Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    font-size: 0.95rem;
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+table caption {
+    padding: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    text-align: left;
+    font-weight: 600;
+}
+
+th, td {
+    padding: 1.1rem 1.3rem;
+    text-align: left;
+    border: none;
+}
+
+thead th {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+}
+
+tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.01);
+    transition: background 0.2s ease;
+}
+
+tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tfoot tr {
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 2px solid var(--border-color);
+    font-weight: 600;
+}
+
+td a {
+    color: var(--accent-indigo-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+td a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* Lists styling */
+ol, ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-muted);
+}
+
+li {
+    margin-bottom: 0.75rem;
+    padding-left: 0.25rem;
+}
+
+ol > li::marker {
+    color: var(--accent-indigo-light);
+    font-weight: bold;
+}
+
+/* Form & Input Fields Design */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: border-color 0.3s ease;
+}
+
+fieldset:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+legend {
+    font-family: var(--font-heading);
+    padding: 0 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+/* Make tables within forms layout like cards */
+fieldset table {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+fieldset tr {
+    background: transparent !important;
+    border-bottom: none;
+}
+
+fieldset td {
+    padding: 0.85rem 0;
+    vertical-align: top;
+}
+
+fieldset td:first-child {
+    width: 25%;
+    font-weight: 500;
+    color: var(--text-primary);
+    padding-right: 1.5rem;
+}
+
+label {
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+/* Form Controls styling */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 0.85rem 1.1rem;
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--border-focus);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+input[type="file"] {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+input[type="file"]::file-selector-button {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 1rem;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Checkbox and Radio details styling */
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--accent-indigo);
+    margin-right: 0.5rem;
+    transform: scale(1.1);
+    vertical-align: middle;
+}
+
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+    vertical-align: middle;
+    margin-right: 1.5rem;
+    color: var(--text-muted);
+}
+
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* CTA Buttons Styling */
+input[type="submit"] {
+    background: var(--accent-glow);
+    color: #FFF;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+}
+
+input[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+input[type="submit"]:active {
+    transform: translateY(0);
+}
+
+input[type="reset"] {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+input[type="reset"]:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Footer Styles */
+footer {
+    padding: 2.5rem 0;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--accent-indigo-light);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer hr {
+    display: none;
+}
+
+/* Utility / Layout elements */
+br {
+    display: none;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 2rem 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 0 1.25rem;
+    }
+    
+    header h1 {
+        font-size: 2.25rem;
+    }
+    
+    section {
+        padding: 1.75rem;
+    }
+    
+    fieldset td:first-child {
+        width: 100%;
+        display: block;
+        padding-bottom: 0.25rem;
+    }
+    
+    fieldset td:last-child {
+        width: 100%;
+        display: block;
+    }
+    
+    fieldset table tr {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.25rem;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+}
